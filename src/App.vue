@@ -5,7 +5,8 @@
     @selectFilm="setFilm($event)"
     />
    <Main
-   :filmSet="filmSel"
+   :testo="filmSel"
+
    />
     </div>
 </template>

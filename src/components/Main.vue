@@ -24,23 +24,18 @@ export default {
 name: "Main",
 data() {
     return {
-    nameFilm: "ritorno",
+    nameFilm: "",
     arrayFilm: [],
     query: "https://api.themoviedb.org/3/search/movie?api_key=8698b0b53840a7e8db92ce738b54cc39&language=en-US&query=",
     query2: "&page=1&include_adult=false"
     }
 },
-props: {
-     filmselezion: String,
- },
  computed: {
     
   },
-// props: {
-//     genres: {
-//       type: String,
-//     },
-// },
+    props: {
+   testo: String,
+  },
 mounted() {
     
 },
@@ -50,17 +45,13 @@ created() {
         console.log(result.data);
         this.arrayFilm = result.data.results,
         console.log("array", this.arrayFilm);
-        console.log("leng", this.arrayFilm.length);
-        
+        this.nameFilm = this.testo;
         console.log("nome", this.namefilm);
     })
     .catch((error) => {
         console.log(error);
     })
     
-    //  this.nameFilm = this.genres;
-    console.log(this.$attrs);
-    this.nameFilm = this.$attrs.genres;
 }
 }
 </script>
