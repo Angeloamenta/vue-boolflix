@@ -1,5 +1,6 @@
 <template>
   <header>
+      <button @click="richiamo">richiamo</button>
       <ul>
           <li  v-for="(film, index) in arrayFilm"
           :key="index">
@@ -40,18 +41,38 @@ mounted() {
     
 },
 created() {
- axios.get(`${this.query}${this.nameFilm}${this.query2}`)
-    .then((result) => {
-        console.log(result.data);
-        this.arrayFilm = result.data.results,
-        console.log("array", this.arrayFilm);
-        this.nameFilm = this.testo;
-        console.log("nome", this.namefilm);
-    })
-    .catch((error) => {
-        console.log(error);
-    })
+//  axios.get(`${this.query}${this.nameFilm}${this.query2}`)
+//     .then((result) => {
+//         console.log(result.data);
+//         this.arrayFilm = result.data.results,
+//         console.log("array", this.arrayFilm);
+//         this.nameFilm = this.testo;
+//         console.log("nome", this.namefilm);
+//         // this.$emit('ricerca', this.nameFilm);
+        
+//     })
+//     .catch((error) => {
+//         console.log(error);
+//     })
     
+},
+methods: {
+richiamo() {
+    axios.get(`${this.query}${this.testo}${this.query2}`)
+        .then((result) => {
+            console.log(result.data);
+            this.arrayFilm = result.data.results,
+            console.log("array", this.arrayFilm);
+            this.nameFilm = this.testo;
+            console.log("nome", this.namefilm);
+            // this.$emit('ricerca', this.nameFilm);
+            
+        })
+        .catch((error) => {
+            console.log(error);
+        })
+this.$emit('ricerca', this.nameFilm);
+}
 }
 }
 </script>

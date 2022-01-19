@@ -6,6 +6,7 @@
     />
    <Main
    :testo="filmSel"
+   @ricerca="ricercafilm($event)"
 
    />
     </div>
@@ -34,6 +35,9 @@ export default {
     setFilm(value) {
       this.filmSel = value;
       console.log(value);
+    },
+    ricercafilm(value) {
+      console.log("film",value);
     },
   }
 };

@@ -18,11 +18,11 @@ data() {
 methods: {
 
 },
-// props: {
-//     genres: {
-//       type: String,
-//     },
-// },
+ props: {
+     genres: {
+       selectFilm: Function,
+     },
+ },
 }
 </script>
 
