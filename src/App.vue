@@ -1,11 +1,11 @@
 <template>
   <div id="app">
     <Header
-    :genres="filmSel"
+    :filmSet="filmSel"
     @selectFilm="setFilm($event)"
     />
    <Main
-   :genres="filmSel"
+   :filmSet="filmSel"
    />
     </div>
 </template>

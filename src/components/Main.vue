@@ -24,7 +24,7 @@ export default {
 name: "Main",
 data() {
     return {
-    nameFilm: "rito",
+    nameFilm: "ritorno",
     arrayFilm: [],
     query: "https://api.themoviedb.org/3/search/movie?api_key=8698b0b53840a7e8db92ce738b54cc39&language=en-US&query=",
     query2: "&page=1&include_adult=false"
@@ -47,7 +47,8 @@ created() {
         console.log(result.data);
         this.arrayFilm = result.data.results,
         console.log("array", this.arrayFilm);
-        this.nameFilm = this.$attrs.genres;
+        console.log("leng", this.arrayFilm.length);
+        
         console.log("nome", this.namefilm);
     })
     .catch((error) => {
@@ -56,6 +57,7 @@ created() {
     
     //  this.nameFilm = this.genres;
     console.log(this.$attrs);
+    
 }
 }
 </script>
