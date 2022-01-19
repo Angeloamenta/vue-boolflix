@@ -3,8 +3,12 @@
       <ul>
           <li v-for="(film, index) in arrayFilm"
           :key="index">
-          {{film.title}}
+          Titolo:{{film.title}}
+          Titolo Originale {{film.original_title}}
+          Lingua {{film.original_language}}
+          Voto {{film.vote_average}}
           </li>
+          
       </ul>
   </header>
 </template>
@@ -15,7 +19,7 @@ export default {
 name: "Main",
 data() {
     return {
-    nameFilm: "Ritorno",
+    nameFilm: "park",
     arrayFilm: [],
     }
 },
