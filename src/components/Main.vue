@@ -11,7 +11,7 @@
           Titolo Originale {{film.original_title}}
           Lingua {{film.original_language}}
           Voto {{film.vote_average}}
-
+          
           </div>
           </li>
       </ul>
@@ -30,14 +30,13 @@ data() {
     query2: "&page=1&include_adult=false"
     }
 },
+props: {
+     filmset: String,
+ },
  computed: {
     
   },
-// props: {
-//     genres: {
-//       type: String,
-//     },
-// },
+
 mounted() {
     
 },
@@ -46,10 +45,8 @@ created() {
     .then((result) => {
         console.log(result.data);
         this.arrayFilm = result.data.results,
-        console.log("array", this.arrayFilm);
-        console.log("leng", this.arrayFilm.length);
         
-        console.log("nome", this.namefilm);
+        // this.$emit('filmricerca', this.nameFilm);
     })
     .catch((error) => {
         console.log(error);
@@ -57,7 +54,7 @@ created() {
     
     //  this.nameFilm = this.genres;
     console.log(this.$attrs);
-    
+    this.nameFilm = this.$attrs.genres;
 }
 }
 </script>

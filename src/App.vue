@@ -5,7 +5,7 @@
     @selectFilm="setFilm($event)"
     />
    <Main
-   :filmSet="filmSel"
+   @filmricerca="setRicerca($event)"
    />
     </div>
 </template>
