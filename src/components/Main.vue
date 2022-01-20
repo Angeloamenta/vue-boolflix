@@ -9,7 +9,8 @@
           v-for="(serie, index) in arraySeries"
           :key="'A'+ index"
           :objinfo="serie"
-          />        
+          />
+          <span class="fi fi-gr">s</span> <span class="fi fi-gr fis"></span>        
   </header>
 </template>
 
