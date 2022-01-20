@@ -29,11 +29,16 @@ export default {
     language: "en-US",
     filmSel: "",
     cards: [],
-    }
+    };
   },
   methods: {
     setFilm(value) {
-      this.filmSel = value;      
+      this.filmSel = value;    
+      console.log(this.filmSel);  
+    },
+    search(value) {
+      this.filmSel = value; 
+      this.ricerca();
     },
     ricerca() {
        const endpoint = "movie";
@@ -41,10 +46,9 @@ export default {
         api_key: this.api_key,
         language: this.language,
         query2: this.filmSel,
-      }
-      axios.get(`${this.query}${endpoint}`, { params: parameters })
-        .then((result) => {
-            this.cards = result.data.results;      
+      };
+      axios.get(`${this.query}${endpoint}`, { params: parameters }).then((result) => {
+        this.cards = result.data.results;      
         })
         .catch((error) => {
             console.log(error);
