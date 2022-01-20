@@ -1,8 +1,8 @@
 <template>
   <div class="card">
    Titolo: {{info.title}} -
-   Titolo Originale: {{ info.origina_title }} -
-    Lingua:{{ info.language }} -
+   Titolo Originale: {{ info.original_title }} -
+    Lingua:{{ info.original_language }} -
    Voto: {{ info.vote_average }} -
   </div>
 </template>

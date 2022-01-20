@@ -1,7 +1,7 @@
 <template>
   <div class="series">
     Titolo: {{objinfo.name}} -
-    Titolo Originale: {{ objinfo.origina_name }} -
+    Titolo Originale: {{ objinfo.original_name }} -
     Lingua:{{ objinfo.original_language }} -
     Voto: {{ objinfo.vote_average }} -
   </div>
