@@ -5,7 +5,7 @@
     />
    <Main
    :arrayff="cards"
-
+   :arraySeries="tvSeries"
    />
     </div>
 </template>
@@ -29,13 +29,15 @@ export default {
     language: "en-US",
     filmSel: "",
     cards: [],
+    tvSeries: [],
     };
   },
   methods: {
     setFilm(value) {
        this.filmSel = value;    
       console.log(this.filmSel);  
-      this.ricerca();  
+      this.ricerca();
+      this.ricercaDue();
     },
     search(value) {
       this.filmSel = value; 
@@ -49,7 +51,23 @@ export default {
         query: this.filmSel,
       };
       axios.get(`${this.query}${endpoint}`, { params: parameters }).then((result) => {
-        this.cards = result.data.results;      
+        this.cards = result.data.results;  
+        console.log("film", this.cards);    
+        })
+        .catch((error) => {
+            console.log(error);
+        })
+    },
+    ricercaDue() {
+       const endpoint = "tv";
+      const parameters = {
+        api_key: this.api_key,
+        language: this.language,
+        query: this.filmSel,
+      };
+      axios.get(`${this.query}${endpoint}`, { params: parameters }).then((result) => {
+        this.tvSeries = result.data.results; 
+        console.log("serie", this.tvSeries);     
         })
         .catch((error) => {
             console.log(error);

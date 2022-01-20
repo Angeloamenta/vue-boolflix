@@ -1,41 +1,44 @@
 <template>
   <header>
-      <ul>
-          <li  v-for="(film, index) in arrayff"
-          :key="index">
-          <div v-if="(arrayff.length == 0)">
-              vuoto
-          </div>
-          <div v-else>
-          Titolo:{{film.title}}
-          Titolo Originale {{film.original_title}}
-          Lingua {{film.original_language}}
-          Voto {{film.vote_average}}
-
-          </div>
-          </li>
-      </ul>
+          <Card
+          v-for="(film, index) in arrayff"
+          :key="index"
+          :info="film"
+          /> -->
+          <Serie
+          v-for="(serie, index) in arraySeries"
+          :key="index"
+          :info="serie"
+          />        
   </header>
 </template>
 
 <script>
+import Card from './Card.vue';
+import Serie from './Serie.vue';
+
 export default {
 name: "Main",
+components: {
+     Card,
+    Serie,
+},
 data() {
     return {
     
     }
 },
- computed: {
-    
+props: {
+   arrayff: {
+       type: Array,
+       default() {
+           return [];
+       },
+   },
+   arraySeries: {
+       type: Array,
+   },
   },
-    props: {
-   testo: String,
-   arrayff: Array,
-  },
-mounted() {
-    
-},
 created() {
 //  axios.get(`${this.query}${this.nameFilm}${this.query2}`)
 //     .then((result) => {
