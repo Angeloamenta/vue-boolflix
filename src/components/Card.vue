@@ -1,9 +1,9 @@
 <template>
   <div class="card">
-   Titolo: {{info.title}} -
-   Titolo Originale: {{ info.original_title }} -
-    Lingua:<country-flag :country='info.original_language' size='small'/>-
-   Voto: {{ info.vote_average }} -
+   Titolo: {{titolo}} -
+   Titolo Originale: {{ toriginale }} -
+    Lingua:<country-flag :country='lingua' size='small'/>-
+   Voto: {{ voto }} -
   </div>
 </template>
 
@@ -14,8 +14,31 @@ name: 'Card',
 components: {
     CountryFlag,
 },
- props: {
-     info: Object,
+//  props: {
+//      info: Object,
+// },
+props: {
+  titolo: {
+        type: String,
+      },
+      toriginale: {
+        type: String,
+      },
+      lingua: {
+        type: String,
+      },
+      voto: {
+        type: Number,
+      },
+},
+data() {
+    return {
+    flagsGb: "gb",
+    }
+},
+created() {
+
+
 },
 };
 </script>

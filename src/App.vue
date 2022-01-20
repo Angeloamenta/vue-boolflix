@@ -53,7 +53,17 @@ export default {
       };
       axios.get(`${this.query}${endpoint}`, { params: parameters }).then((result) => {
         this.cards = result.data.results;  
-        console.log("film", this.cards);    
+        console.log("film", this.cards); 
+        for (let i = 0; i < this.cards.length; i++) {
+          const element = this.cards[i];
+          console.log(element.original_language);
+          if (element.original_language == "en") {
+            element["original_language"] = "gb"
+            console.log("cambio", element.original_language);
+          }
+          
+        }
+          
         })
         .catch((error) => {
             console.log(error);
@@ -68,7 +78,16 @@ export default {
       };
       axios.get(`${this.query}${endpoint}`, { params: parameters }).then((result) => {
         this.tvSeries = result.data.results; 
-        console.log("serie", this.tvSeries);     
+        console.log("serie", this.tvSeries);  
+        for (let i = 0; i < this.tvSeries.length; i++) {
+          const element = this.tvSeries[i];
+          console.log(element.original_language);
+          if (element.original_language == "en") {
+            element["original_language"] = "gb"
+            console.log("cambio", element.original_language);
+          }
+          
+        }   
         })
         .catch((error) => {
             console.log(error);

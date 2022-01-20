@@ -1,9 +1,9 @@
 <template>
   <div class="series">
-    Titolo: {{objinfo.name}} -
-    Titolo Originale: {{ objinfo.original_name }} -
-    Lingua:<country-flag :country='objinfo.original_language' size='small'/>-
-    Voto: {{ objinfo.vote_average }} -
+    Titolo: {{titolo}} -
+    Titolo Originale: {{ toriginale }} -
+    Lingua:<country-flag :country='lingua' size='small'/>-
+    Voto: {{ voto }} -
   </div>
 </template>
 
@@ -16,7 +16,18 @@ components: {
     CountryFlag,
 },
 props: {
-     objinfo: Object,
+  titolo: {
+        type: String,
+      },
+      toriginale: {
+        type: String,
+      },
+      lingua: {
+        type: String,
+      },
+      voto: {
+        type: Number,
+      },
 },
 }
 </script>
