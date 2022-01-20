@@ -10,13 +10,14 @@
           :key="'A'+ index"
           :objinfo="serie"
           />
-          <span class="fi fi-gr">s</span> <span class="fi fi-gr fis"></span>        
+              
   </header>
 </template>
 
 <script>
 import Card from './Card.vue';
 import Serie from './Serie.vue';
+
 
 export default {
 name: "Main",
