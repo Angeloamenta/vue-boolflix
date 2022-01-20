@@ -9,14 +9,14 @@
           v-for="(serie, index) in arraySeries"
           :key="'A'+ index"
           :objinfo="serie"
-          />
-              
+          />  
   </header>
 </template>
 
 <script>
 import Card from './Card.vue';
 import Serie from './Serie.vue';
+
 
 
 export default {
