@@ -7,6 +7,7 @@
           :toriginale="film.original_title"
           :lingua="film.original_language"
           :voto="film.vote_average"
+          :img="film.poster_path"
           />
           <Serie
           v-for="(serie, index) in arraySeries"
@@ -15,6 +16,8 @@
           :toriginale="serie.original_name"
           :lingua="serie.original_language"
           :voto="serie.vote_average"
+          :img="serie.poster_path"
+          
           />  
   </header>
   
