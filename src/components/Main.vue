@@ -4,11 +4,11 @@
           v-for="(film, index) in arrayff"
           :key="index"
           :info="film"
-          /> -->
+          />
           <Serie
           v-for="(serie, index) in arraySeries"
-          :key="index"
-          :info="serie"
+          :key="'A'+ index"
+          :objinfo="serie"
           />        
   </header>
 </template>

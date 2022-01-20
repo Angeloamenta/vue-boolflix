@@ -1,9 +1,9 @@
 <template>
   <div class="series">
-    Titolo: {{info.name}} -
-    Titolo Originale: {{ info.origina_name }} -
-    Lingua:{{ info.original_language }} -
-    Voto: {{ info.vote_average }} -
+    Titolo: {{objinfo.name}} -
+    Titolo Originale: {{ objinfo.origina_name }} -
+    Lingua:{{ objinfo.original_language }} -
+    Voto: {{ objinfo.vote_average }} -
   </div>
 </template>
 
@@ -11,7 +11,7 @@
 export default {
 name: 'Serie',
 props: {
-     series: Object,
+     objinfo: Object,
 },
 }
 </script>
