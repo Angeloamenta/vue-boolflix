@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header
-    @selectFilm="ricerca($event)"
+    @selectFilm="setFilm($event)"
     />
    <Main
    :arrayff="cards"
@@ -33,8 +33,9 @@ export default {
   },
   methods: {
     setFilm(value) {
-      this.filmSel = value;    
+       this.filmSel = value;    
       console.log(this.filmSel);  
+      this.ricerca();  
     },
     search(value) {
       this.filmSel = value; 
@@ -45,7 +46,7 @@ export default {
       const parameters = {
         api_key: this.api_key,
         language: this.language,
-        query2: this.filmSel,
+        query: this.filmSel,
       };
       axios.get(`${this.query}${endpoint}`, { params: parameters }).then((result) => {
         this.cards = result.data.results;      
