@@ -70,6 +70,7 @@ main {
     background-color: #434343;
     justify-content: center;
     padding-bottom: 20px;
+    min-height: 100vh;
 }
 </style>>
 
