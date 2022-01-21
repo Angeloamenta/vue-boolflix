@@ -10,7 +10,7 @@
     Lingua: <country-flag :country='lingua' size='small'/> {{lingua}}
     </div>
     <div class="vote">
-   Voto:  {{  Math.floor(Math.round(voto / 2)) }} - <span v-for="n in Math.floor(Math.round(voto / 2))" :key="n"><i class="fas fa-star"></i></span>
+   Voto:  {{  Math.floor(Math.round(voto / 2)) }} <span v-for="numero in Math.floor(Math.round(voto / 2))" :key="numero"><i class="fas fa-star"></i></span>
     </div>
     <div class="img">
       <div v-if="img== null">Nessuna immagine Disponibile</div>
@@ -49,6 +49,28 @@ props: {
 }
 </script>
 
-<style>
+<style lang="scss">
+.series {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: calc(85% / 5 - 20px);
+  margin-left: 20px;
+  margin-top: 20px;
+  text-align: center;
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+  .img img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .fa-star {
+    color: yellow;
+    
+  }
+}
+</style>>
 
-</style>

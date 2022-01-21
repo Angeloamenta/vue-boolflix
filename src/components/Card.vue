@@ -1,5 +1,6 @@
 <template>
   <div class="card">
+    <div class="text">
     <div class="title">
    Titolo: {{titolo}}
     </div>
@@ -10,7 +11,8 @@
     Lingua: <country-flag :country='lingua' size='small'/> {{lingua}}
     </div>
     <div class="vote">
-   Voto:  {{  Math.floor(Math.round(voto / 2)) }} - <span v-for="n in Math.floor(Math.round(voto / 2))" :key="n"><i class="fas fa-star"></i></span>
+   Voto:  {{  Math.floor(Math.round(voto / 2)) }} <span v-for="numero in Math.floor(Math.round(voto / 2))" :key="numero"><i class="fas fa-star"></i></span>
+    </div>
     </div>
     <div class="img">
       <div v-if="img== null">Nessuna immagine Disponibile</div>
@@ -61,16 +63,49 @@ created() {
 
 
 },
+methods: {
+
+}
 };
 </script>
 
 <style lang="scss">
 .card {
   display: flex;
+  justify-content: center;
   flex-direction: column;
-  width: calc(100% / 5);
+  align-items: center;
+  width: calc(85% / 5 - 20px);
+  height: 500px;
+  margin-left: 20px;
+  margin-top: 20px;
   text-align: center;
-  
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+  position: relative;
+  overflow: hidden;
+  .img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;    
+    img {
+    &:active,
+    &:hover,
+    &:focus {
+      display: none;
+    }
+  }
+  }
+
+  .fa-star {
+    color: yellow;
+
+    
+  }
 }
 </style>>
 

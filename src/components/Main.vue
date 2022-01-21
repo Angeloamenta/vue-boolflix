@@ -56,7 +56,7 @@ created() {
 
 },
 methods: {
-
+  
 }
 }
 </script>
@@ -65,6 +65,8 @@ methods: {
 main {
     display: flex;
     flex-wrap: wrap;
+    background-color: #434343;
+    justify-content: center;
 }
 </style>>
 
