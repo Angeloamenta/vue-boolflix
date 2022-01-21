@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <main>
           <Card
           v-for="(film, index) in arrayff"
           :key="index"
@@ -19,7 +19,7 @@
           :img="serie.poster_path"
           
           />  
-  </header>
+  </main>
   
 </template>
 
@@ -61,6 +61,10 @@ methods: {
 }
 </script>
 
-<style>
+<style lang="scss">
+main {
+    display: flex;
+    flex-wrap: wrap;
+}
+</style>>
 
-</style>

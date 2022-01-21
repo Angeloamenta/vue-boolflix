@@ -21,6 +21,10 @@ methods: {
 }
 </script>
 
-<style>
+<style lang="scss">
+header {
+    background-color: black;
+    height: 70px;
+}
+</style>>
 
-</style>

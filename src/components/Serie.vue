@@ -1,10 +1,21 @@
 <template>
   <div class="series">
-    Titolo: {{titolo}} -
-    Titolo Originale: {{ toriginale }} -
-    Lingua:<country-flag :country='lingua' size='small'/>-
-    Voto: {{  Math.floor(Math.round(voto / 2)) }}  <span v-for="n in Math.floor(Math.round(voto / 2))" :key="n"><i class="fas fa-star"></i></span> -
-    <img :src="`https://image.tmdb.org/t/p/w342/${img}`" alt="">
+    <div class="title">
+   Titolo: {{titolo}}
+    </div>
+    <div class="original-title">
+   Titolo Originale: {{ toriginale }}
+    </div>
+    <div class="languages">
+    Lingua: <country-flag :country='lingua' size='small'/> {{lingua}}
+    </div>
+    <div class="vote">
+   Voto:  {{  Math.floor(Math.round(voto / 2)) }} - <span v-for="n in Math.floor(Math.round(voto / 2))" :key="n"><i class="fas fa-star"></i></span>
+    </div>
+    <div class="img">
+      <div v-if="img== null">Nessuna immagine Disponibile</div>
+  <img v-else :src="`https://image.tmdb.org/t/p/w342/${img}`" alt="">
+    </div>
   </div>
 </template>
 
