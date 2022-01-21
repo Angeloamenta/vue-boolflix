@@ -14,7 +14,9 @@
     "vue": "^2.6.11",
     "vue-axios": "^3.4.0",
     "vue-country-flag": "^2.3.2",
-    "vue-flag-icon": "^1.0.6"
+    "vue-flag-icon": "^1.0.6",
+    "vue-star-rating": "^1.7.0",
+    "vue-stars": "^2.0.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
