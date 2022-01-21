@@ -17,6 +17,7 @@
           :lingua="serie.original_language"
           :voto="serie.vote_average"
           :img="serie.poster_path"
+          :overview="serie.overview"
           
           />  
   </main>

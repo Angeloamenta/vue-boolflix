@@ -11,7 +11,7 @@
     Lingua: <country-flag :country='lingua' size='small'/> {{lingua}}
     </div>
     <div class="vote">
-   Voto:  {{  Math.floor(Math.round(voto / 2)) }} <span v-for="numero in Math.floor(Math.round(voto / 2))" :key="numero"><i class="fas fa-star"></i></span>
+   Voto:  {{  Math.floor(Math.round(voto / 2)) }} <span v-for="numero in Math.floor(Math.round(voto / 2))" :key="numero"><i class="fas fa-star"></i></span><span v-for="numeroDue in  5 -Math.floor(Math.round(voto / 2))" :key="'b' + numeroDue"><i class="far fa-star"></i></span>
     </div>
     </div>
     <div class="img">
@@ -85,6 +85,11 @@ methods: {
   border: 2px solid white;
   position: relative;
   overflow: hidden;
+  &:active .img,
+  &:hover .img,
+  &:focus .img{
+    display: none;
+  }
   .img {
     width: 100%;
     height: 100%;
@@ -92,13 +97,7 @@ methods: {
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;    
-    img {
-    &:active,
-    &:hover,
-    &:focus {
-      display: none;
-    }
-  }
+    
   }
 
   .fa-star {
@@ -107,5 +106,5 @@ methods: {
     
   }
 }
-</style>>
+</style>
 
