@@ -13,6 +13,9 @@
     <div class="vote">
    Voto:  {{  Math.floor(Math.round(voto / 2)) }} <span v-for="numero in Math.floor(Math.round(voto / 2))" :key="numero"><i class="fas fa-star"></i></span><span v-for="numeroDue in  5 -Math.floor(Math.round(voto / 2))" :key="'b' + numeroDue"><i class="far fa-star"></i></span>
     </div>
+    <div class="overview">
+      Overview: {{overview}}
+    </div>
     </div>
     <div class="img">
       <div v-if="img== null">Nessuna immagine Disponibile</div>
@@ -52,6 +55,9 @@ props: {
        type: String,
        
       },
+       overview: {
+        type: String,
+      },
 },
 data() {
     return {
@@ -90,6 +96,15 @@ methods: {
   &:focus .img{
     display: none;
   }
+
+  .text {
+    .overview {
+      overflow: auto;
+      height: 300px;
+      margin-top: 20px;
+      padding: 0 5px;
+    }
+  }
   .img {
     width: 100%;
     height: 100%;
@@ -99,7 +114,7 @@ methods: {
     left: 50%;    
     
   }
-
+ 
   .fa-star {
     color: yellow;
 

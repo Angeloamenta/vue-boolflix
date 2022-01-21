@@ -79,6 +79,14 @@ props: {
   &:focus .img{
     display: none;
   }
+  .text {
+    .overview {
+      overflow: auto;
+      height: 300px;
+      margin-top: 20px;
+      padding: 0 5px;
+    }
+  }
   .img {
     width: 100%;
     height: 100%;

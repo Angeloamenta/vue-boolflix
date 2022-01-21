@@ -8,6 +8,7 @@
           :lingua="film.original_language"
           :voto="film.vote_average"
           :img="film.poster_path"
+          :overview="film.overview"
           />
           <Serie
           v-for="(serie, index) in arraySeries"
@@ -68,6 +69,7 @@ main {
     flex-wrap: wrap;
     background-color: #434343;
     justify-content: center;
+    padding-bottom: 20px;
 }
 </style>>
 
