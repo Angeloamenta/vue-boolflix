@@ -3,7 +3,7 @@
    Titolo: {{titolo}} -
    Titolo Originale: {{ toriginale }} -
     Lingua: <country-flag :country='lingua' size='small'/> {{lingua}}-
-   Voto:  {{  Math.round(voto) / 2 }} -
+   Voto:  {{  Math.floor(Math.round(voto / 2)) }} - <span v-for="n in Math.floor(Math.round(voto / 2))" :key="n"><i class="fas fa-star"></i></span> -
    <star-rating >2</star-rating>
   <star-rating @rating-selected="2"></star-rating>
   
