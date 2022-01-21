@@ -37,6 +37,7 @@ header {
         color: red;
         h2 {
             font-size: 2.3em;
+            text-transform: uppercase;
         }
     }
     .search{
@@ -48,6 +49,7 @@ header {
             background-color: black;
             color: red;
             border-radius: 15px;
+            text-transform: uppercase;
         }
         input {
             height: 25px;
