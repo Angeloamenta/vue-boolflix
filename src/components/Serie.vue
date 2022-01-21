@@ -3,7 +3,7 @@
     Titolo: {{titolo}} -
     Titolo Originale: {{ toriginale }} -
     Lingua:<country-flag :country='lingua' size='small'/>-
-    Voto: {{ voto }} -
+    Voto: {{  Math.round(voto) / 2 }} <span v-for="n in 5" :key="n"><i class="fas fa-star"></i></span> -
     <img :src="`https://image.tmdb.org/t/p/w342/${img}`" alt="">
   </div>
 </template>
@@ -12,6 +12,7 @@
 import CountryFlag from 'vue-country-flag'
 
 export default {
+  
 name: 'Serie',
 components: {
     CountryFlag,

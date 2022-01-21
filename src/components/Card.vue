@@ -5,7 +5,7 @@
     Lingua: <country-flag :country='lingua' size='small'/> {{lingua}}-
    Voto:  {{  Math.round(voto) / 2 }} -
    <star-rating >2</star-rating>
-  <star-rating @rating-selected="setRating"></star-rating>
+  <star-rating @rating-selected="2"></star-rating>
   
   </div>
 </template>
