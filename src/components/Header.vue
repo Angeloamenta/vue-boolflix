@@ -20,7 +20,9 @@ data() {
     }
 },
 methods: {
-
+selectFilm() {
+    
+}
 },
 }
 </script>
@@ -39,6 +41,7 @@ header {
             font-size: 2.3em;
             text-transform: uppercase;
         }
+        
     }
     .search{
         button {
@@ -55,7 +58,9 @@ header {
             height: 25px;
             width: 200px;
             border: none;
+            outline: none;
             border-radius: 15px;
+            padding: 10px;
         }
 
     } 

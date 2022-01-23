@@ -63,7 +63,7 @@ props: {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  width: calc(85% / 5 - 20px);
+  width: calc(100% / 5 - 20px);
   height: 500px;
   margin-left: 20px;
   margin-top: 20px;
@@ -88,8 +88,7 @@ props: {
     }
   }
   .img {
-    width: 100%;
-    height: 100%;
+
     position: absolute;
     transform: translate(-50%, -50%);
     top: 50%;

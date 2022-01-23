@@ -51,23 +51,30 @@ export default {
         language: this.language,
         query: this.filmSel,
       };
-      axios.get(`${this.query}${endpoint}`, { params: parameters }).then((result) => {
-        this.cards = result.data.results;  
-        console.log("film", this.cards); 
-        for (let i = 0; i < this.cards.length; i++) {
-          const element = this.cards[i];
-          console.log(element.original_language);
-          if (element.original_language == "en") {
-            element["original_language"] = "gb"
-            console.log("cambio", element.original_language);
+      if (this.filmSel.trim().length <= 0 ) {
+        console.log("scrivi");
+      }else {
+        axios.get(`${this.query}${endpoint}`, { params: parameters }).then((result) => {
+          this.cards = result.data.results;  
+          console.log("film", this.cards); 
+          this.filmSel= "";
+          for (let i = 0; i < this.cards.length; i++) {
+            const element = this.cards[i];
+            console.log(element.original_language);
+            if (element.original_language == "en") {
+              element["original_language"] = "gb"
+              console.log("cambio", element.original_language);
+            }
+            
           }
-          
-        }
-          
-        })
-        .catch((error) => {
-            console.log(error);
-        })
+            
+          })
+          .catch((error) => {
+              console.log(error);
+          })
+        this.filmSel= "";
+        console.log(this.filmSel);
+      }
     },
     ricercaDue() {
        const endpoint = "tv";
@@ -76,22 +83,28 @@ export default {
         language: this.language,
         query: this.filmSel,
       };
-      axios.get(`${this.query}${endpoint}`, { params: parameters }).then((result) => {
-        this.tvSeries = result.data.results; 
-        console.log("serie", this.tvSeries);  
-        for (let i = 0; i < this.tvSeries.length; i++) {
-          const element = this.tvSeries[i];
-          console.log(element.original_language);
-          if (element.original_language == "en") {
-            element["original_language"] = "gb"
-            console.log("cambio", element.original_language);
-          }
-          
-        }   
-        })
-        .catch((error) => {
-            console.log(error);
-        })
+       if (this.filmSel.trim().length <= 0 ) {
+         console.log("scrivi");
+       }else {
+         axios.get(`${this.query}${endpoint}`, { params: parameters }).then((result) => {
+           this.tvSeries = result.data.results; 
+           console.log("serie", this.tvSeries); 
+           this.filmSel= ""; 
+           for (let i = 0; i < this.tvSeries.length; i++) {
+             const element = this.tvSeries[i];
+             console.log(element.original_language);
+             if (element.original_language == "en") {
+               element["original_language"] = "gb"
+               console.log("cambio", element.original_language);
+             }
+             
+           }   
+           })
+           .catch((error) => {
+               console.log(error);
+           })
+        this.filmSel= "";
+       }
     },
   }
 };
